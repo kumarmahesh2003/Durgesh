@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DURGESH - GROCERY PAO JHATPAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .logo p {
+            margin: 0;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        .search-container {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+        .search-container input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .ad-banner img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+        .section h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(25% - 20px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+        .product-item h3 {
+            margin: 15px 0 10px;
+        }
+        .product-item .price {
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-item .contact {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .sub-category-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sub-category-list li {
+            margin: 10px 0;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .sub-category-list li:hover {
+            color: #4CAF50;
+        }
+        .sub-category-items {
+            display: none;
+            margin-top: 20px;
+        }
+        .sub-category-items.active {
+            display: block;
+        }
+        .sub-category-items img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="./logo 1.png" alt="Logo">
+                <div class="logo">
+                    <h1>DURGESH</h1>
+                    <p>GROCERY PAO JHATPAT</p>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for products">
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('sale')">Big Monsoon Sale</a></li>
+            <li><a href="#" onclick="showSection('categories')">Categories</a></li>
+            <li><a href="#" onclick="showSection('offers')">Offers</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section id="home" class="section active-section">
+            <h2>Welcome to DURGESH</h2>
+            <p>Select a section to view details.</p>
+            <div class="ad-banner">
+                <img src="./ads.png" alt="Ad Banner">
+            </div>
+        </section>
+        
+        <section id="sale" class="section">
+            <h2>Big Monsoon Sale</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product Name 1</h3>
+                    <p class="price">₹750.00</p>
+                    <p class="contact">Contact: 8920189648</p>
+                </div>
+                <div class="product-item">
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>Product Name 2</h3>
+                    <p class="price">₹1,200.00</p>
+                    <p class="contact">Contact: 8920189648</p>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        </section>
+
+        <section id="categories" class="section">
+            <h2>Categories</h2>
+            <ul class="sub-category-list">
+                <li onclick="showSubCategory('fruits-vegetables')">Fruits & Vegetables</li>
+                <li onclick="showSubCategory('oil-masala')">Oil & Masala</li>
+                <li onclick="showSubCategory('snacks-branded-food')">Snacks & Branded Food</li>
+                <li onclick="showSubCategory('milk-products')">Milk Products</li>
+            </ul>
+
+            <div id="fruits-vegetables" class="sub-category-items">
+                <img src="./veg .png" alt="Fruits & Vegetables">
+                <h3>Fruits & Vegetables</h3>
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="fruit1.jpg" alt="Fruit 1">
+                        <h3>सेब</h3>
+                        <p class="price">₹100.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="vegetable1.jpg" alt="Vegetable 1">
+                        <h3>गाजर</h3>
+                        <p class="price">₹50.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="oil-masala" class="sub-category-items">
+                <img src="./Oil & Masala.png" alt="Oil & Masala">
+                <h3>Oil & Masala</h3>
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="oil1.jpg" alt="Oil 1">
+                        <h3>सूरजमुखी तेल</h3>
+                        <p class="price">₹200.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="masala1.jpg" alt="Masala 1">
+                        <h3>मसाला 1</h3>
+                        <p class="price">₹150.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="snacks-branded-food" class="sub-category-items">
+                <img src="./Snacks & Branded Food.png" alt="Snacks & Branded Food">
+                <h3>Snacks & Branded Food</h3>
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="snack1.jpg" alt="Snack 1">
+                        <h3>चिप्स</h3>
+                        <p class="price">₹75.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="branded-food1.jpg" alt="Branded Food 1">
+                        <h3>ब्रांडेड फूड 1</h3>
+                        <p class="price">₹120.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="milk-products" class="sub-category-items">
+                <img src="./Milk produts.png" alt="Milk Products">
+                <h3>Milk Products</h3>
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="milk1.jpg" alt="Milk 1">
+                        <h3>दूध</h3>
+                        <p class="price">₹60.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="cheese1.jpg" alt="Cheese 1">
+                        <h3>पनीर</h3>
+                        <p class="price">₹250.00</p>
+                        <p class="contact">Contact: 8920189648</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offers" class="section">
+            <h2>Offers</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="offer-product1.jpg" alt="Offer Product 1">
+                    <h3>ऑफर उत्पाद 1</h3>
+                    <p class="price">₹900.00</p>
+                    <p class="contact">Contact: 8920189648</p>
+                </div>
+                <div class="product-item">
+                    <img src="offer-product2.jpg" alt="Offer Product 2">
+                    <h3>ऑफर उत्पाद 2</h3>
+                    <p class="price">₹700.00</p>
+                    <p class="contact">Contact: 8920189648</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>You can reach us at 8920189648 or email us at jaiswalmahesh8010@gmail.com.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: 8920189648 | Email: jaiswalmahesh8010@gmail.com</p>
+        <p>Address: 123 Main Street, City, State, 456789</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+                if (section.id === sectionId) {
+                    section.classList.add('active-section');
+                }
+            });
+        }
+
+        function showSubCategory(subCategoryId) {
+            const subCategories = document.querySelectorAll('.sub-category-items');
+            subCategories.forEach(subCategory => {
+                subCategory.classList.remove('active');
+                if (subCategory.id === subCategoryId) {
+                    subCategory.classList.add('active');
+                }
+            });
+        }
+
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(query)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
